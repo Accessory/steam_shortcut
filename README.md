@@ -1,8 +1,7 @@
 # Steam Shortcut
 
 ## Introduction
- Simple Tool to view the steam shortcut file and
- a little bit more
+A simple tool to view Steam shortcut files and more. Currently, it only works on Linux.
  
 ## Usage
 ```
@@ -21,4 +20,4 @@ Options:
       --steam-shortcuts-file <STEAM_SHORTCUTS_FILE>  [env: STEAM_SHORTCUTS_FILE=]
   -h, --help                                         Print help
   -V, --version                                      Print version
-  ```
+```
