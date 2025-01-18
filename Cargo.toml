@@ -1,0 +1,23 @@
+[package]
+name = "steam_shortcut"
+version = "0.1.2"
+edition = "2021"
+
+[dependencies]
+crc = "3"
+ureq = { version = "3", features = ["json", "brotli", "gzip", "rustls"] }
+serde_json = "1"
+serde = { version = "1", features = ["derive"] }
+dirs = "6"
+resvg = "0"
+image = { version = "0", features = ["jpeg", "png", "default-formats"] }
+clap = { version = "4", features = ["derive", "env", "help"] }
+strum = { version = "0", features = ["derive", "strum_macros"] }
+dotenvy = "0"
+textdistance = "1"
+anyhow = { version = "1" }
+
+[profile.release]
+codegen-units = 1
+lto = true
+strip = true
