@@ -296,9 +296,12 @@ pub(crate) fn create_grid_for_shortcut(shortcut: &ShortcutEntry, grid_path: &Pat
     let x = (1920 - img.width()) / 2;
     let y = (620 - img.height()) / 2;
     image::imageops::overlay(&mut blur, &img, x as i64, y as i64);
+    let rgb = blur.to_rgb8();
+    let base_image_path = grid_path.join(format!("{}.jpg", shortcut.appid));
+    rgb.save_with_format(base_image_path, image::ImageFormat::Jpeg)
+        .unwrap();
     let hero_image_path = grid_path.join(format!("{}_hero.jpg", shortcut.appid));
-    blur.to_rgb8()
-        .save_with_format(hero_image_path, image::ImageFormat::Jpeg)
+    rgb.save_with_format(hero_image_path, image::ImageFormat::Jpeg)
         .unwrap();
 }
 
