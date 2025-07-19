@@ -42,10 +42,10 @@ impl Shortcuts {
         std::fs::write(shortcuts_file_path, bytes).unwrap()
     }
 
-    pub(crate) fn fix_flatpaks(&mut self, grid_path: &Path) -> bool {
+    pub(crate) fn fix_flatpaks(&mut self, grid_path: &Path, force: bool) -> bool {
         let mut has_changes = false;
         for shortcut in self.shortcuts.iter_mut() {
-            if !shortcut.icon.is_empty() || !shortcut.exe.contains("flatpak") {
+            if !force && (!shortcut.icon.is_empty() || !shortcut.exe.contains("flatpak")) {
                 continue;
             }
 

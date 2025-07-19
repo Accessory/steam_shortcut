@@ -20,6 +20,12 @@ pub(crate) struct AddFlatpak {
     pub flatpak_id: String,
 }
 
+#[derive(Parser, Debug, Serialize, Deserialize, Clone)]
+pub(crate) struct FixFlatpak {
+    #[arg(long, env, default_value = "false")]
+    pub force: bool,
+}
+
 #[derive(Debug, Subcommand, Serialize, Deserialize, strum::Display, Clone, Default)]
 pub(crate) enum Actions {
     #[default]
@@ -28,7 +34,7 @@ pub(crate) enum Actions {
     #[cfg(not(target_family = "windows"))]
     AddMinusGamesGameToSteam(AddMinusGamesGameToSteam),
     #[cfg(not(target_family = "windows"))]
-    FixFlatpak,
+    FixFlatpak(FixFlatpak),
     #[cfg(not(target_family = "windows"))]
     AddFlatpak(AddFlatpak),
 }

@@ -1,0 +1,45 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'steam_shortcut'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=steam_shortcut",
+                    "--package=steam_shortcut"
+                ],
+                "filter": {
+                    "name": "steam_shortcut",
+                    "kind": "bin"
+                }
+            },
+            "args": ["fix-flatpak"],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'steam_shortcut'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=steam_shortcut",
+                    "--package=steam_shortcut"
+                ],
+                "filter": {
+                    "name": "steam_shortcut",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}

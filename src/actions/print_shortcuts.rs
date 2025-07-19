@@ -14,7 +14,7 @@ pub(crate) fn print_shortcuts(config: &Config) {
         }
         Some(shortcuts) => {
             println!("Shortcuts at {}", short_cuts_file_path.display());
-            println!("{}", shortcuts)
+            println!("{shortcuts}")
         }
     }
 }
@@ -31,7 +31,7 @@ pub(crate) fn print_only_shortcuts(config: &Config) {
             println!("{{}}");
         }
         Some(shortcuts) => {
-            println!("{}", shortcuts)
+            println!("{shortcuts}")
         }
     }
 }

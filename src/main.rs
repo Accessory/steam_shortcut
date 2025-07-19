@@ -32,8 +32,8 @@ fn main() {
         #[cfg(not(target_family = "windows"))]
         Actions::AddFlatpak(add_flatpak_config) => add_flatpak(&config, add_flatpak_config),
         #[cfg(not(target_family = "windows"))]
-        Actions::FixFlatpak => {
-            fix_flatpak(config);
+        Actions::FixFlatpak(fix_flatpak_config) => {
+            fix_flatpak(&config, fix_flatpak_config.force);
         }
     }
 }

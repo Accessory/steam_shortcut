@@ -3,7 +3,7 @@ use crate::flatpak::create_flatpak_shortcut;
 use crate::shortcuts::Shortcuts;
 use crate::utils::create_grid_for_shortcut;
 
-pub(crate) fn fix_flatpak(config: Config) {
+pub(crate) fn fix_flatpak(config: &Config, force: bool) {
     let Some(shortcuts_file_path) = config.find_steam_shortcuts_file() else {
         println!("Failed to find the shortcuts");
         return;
@@ -19,7 +19,7 @@ pub(crate) fn fix_flatpak(config: Config) {
         );
         return;
     };
-    if shortcuts.fix_flatpaks(&shortcuts_file_path.parent().unwrap().join("grid")) {
+    if shortcuts.fix_flatpaks(&shortcuts_file_path.parent().unwrap().join("grid"), force) {
         shortcuts.save_to(&shortcuts_file_path);
     }
 }
