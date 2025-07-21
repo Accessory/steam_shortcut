@@ -33,7 +33,9 @@ fn create_minus_games_shortcut_from_game_name(
 ) -> ShortcutEntry {
     const EXE: &str = "/usr/bin/flatpak";
 
-    let launch_options = format!("run --branch=stable --arch=x86_64 --command=/app/bin/minus_games_gui io.github.accessory.minus_games_gui --mode Cli run-game-synced \"{game_name}\"");
+    let launch_options = format!(
+        "run --branch=stable --arch=x86_64 --command=/app/bin/minus_games_gui io.github.accessory.minus_games_gui --mode Cli run-game-synced \"{game_name}\""
+    );
     let appid = generate_app_id(EXE, &launch_options);
 
     let icon =

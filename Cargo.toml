@@ -11,15 +11,15 @@ serde = { version = "1", features = ["derive"] }
 dirs = "6"
 resvg = "0"
 image = { version = "0", features = ["jpeg", "png", "default-formats"] }
-imageproc = { version = "0" }
+# imageproc = { version = "0" }
 ab_glyph = { version = "0" }
 clap = { version = "4", features = ["derive", "env", "help"] }
 strum = { version = "0", features = ["derive", "strum_macros"] }
 dotenvy = "0"
 textdistance = "1"
 anyhow = { version = "1" }
-# cosmic-text = { version = "0" }
-# colored = "*"
+cosmic-text = { version = "0" }
+colored = "*"
 
 [profile.release]
 codegen-units = 1

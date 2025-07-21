@@ -1,5 +1,5 @@
-use crate::shortcuts::shortcut::ShortcutEntry;
 use crate::shortcuts::Shortcuts;
+use crate::shortcuts::shortcut::ShortcutEntry;
 use crate::steam::get_user_id_fast;
 use clap::{Parser, Subcommand};
 use serde::{Deserialize, Serialize};
@@ -130,10 +130,6 @@ impl Config {
 
         rtn.push("config/shortcuts.vdf");
 
-        if rtn.is_file() {
-            Some(rtn)
-        } else {
-            None
-        }
+        if rtn.is_file() { Some(rtn) } else { None }
     }
 }
