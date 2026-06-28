@@ -132,7 +132,7 @@ pub(crate) fn add_integer_to_shortcut(
             "Devkit" => shortcut_entry.devkit = value,
             "DevkitOverrideAppID" => shortcut_entry.devkit_override_app_id = value,
             "LastPlayTime" => shortcut_entry.last_play_time = value,
-            _ => return Err(ParsingError::UnknownKey(key)),
+            _ => return Err(ParsingError::UnknownIntegerKey(key)),
         }
     } else {
         return Err(ParsingError::CurrentShortcutEntryIsEmpty);
@@ -155,7 +155,8 @@ pub(crate) fn add_string_to_shortcut(
             "LaunchOptions" => shortcut_entry.launch_options = value,
             "DevkitGameID" => shortcut_entry.devkit_game_id = value,
             "FlatpakAppID" => shortcut_entry.flatpak_app_id = value,
-            _ => return Err(ParsingError::UnknownKey(key)),
+            "sortas" => shortcut_entry.sort_as = value,
+            _ => return Err(ParsingError::UnknownStringKey(key)),
         }
     } else {
         return Err(ParsingError::CurrentShortcutEntryIsEmpty);
@@ -279,7 +280,7 @@ pub(crate) fn draw_steam_logo_with_text(text: &str, to: &Path) {
     let mut font_name_option = None;
     let mut weight = Weight::NORMAL;
     for face in font_system.db().faces() {
-    //     // println!("Font: {}", &face.families.first().unwrap().0);
+        //     // println!("Font: {}", &face.families.first().unwrap().0);
         if face.families.first().unwrap().0 == "Motiva Sans" {
             font_name_option = Some(face.families.first().unwrap().0.clone());
             break;

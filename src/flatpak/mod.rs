@@ -46,6 +46,7 @@ pub(crate) fn create_flatpak_shortcut(
         devkit_override_app_id: 0,
         last_play_time: 0,
         flatpak_app_id: flatpak_id.to_string(),
+        sort_as: "".to_string(),
         tags: vec![],
     })
 }

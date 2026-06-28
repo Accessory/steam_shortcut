@@ -62,6 +62,7 @@ fn create_minus_games_shortcut_from_game_name(
         devkit_override_app_id: 0,
         last_play_time: 0,
         flatpak_app_id: "".to_string(),
+        sort_as: "".to_string(),
         tags: vec![],
     }
 }

@@ -61,7 +61,7 @@ impl Shortcuts {
                         create_grid_for_shortcut(shortcut, grid_path);
                         shortcut.flatpak_app_id = desktop_file.icon;
                         has_changes = true;
-                        println!("Changed Shortcut: {}", &shortcut.app_name);
+                        println!("Changed Shortcut: {}", shortcut.app_name);
                     } else {
                         println!("Icon path is empty");
                     }
@@ -108,6 +108,7 @@ impl Shortcuts {
             );
             insert_entry_string_integer(&mut rtn, "LastPlayTime", shortcut.last_play_time);
             insert_entry_string_string(&mut rtn, "FlatpakAppID", shortcut.flatpak_app_id.as_str());
+            insert_entry_string_string(&mut rtn, "sortas", shortcut.sort_as.as_str());
             insert_entry_string_map(&mut rtn, "tags");
             rtn.push(0x08);
         }

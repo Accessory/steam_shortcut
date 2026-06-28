@@ -31,7 +31,7 @@ pub(crate) fn get_best_steam_app_id(game_name: &str) -> Option<u32> {
 
     println!(
         "Found Steam AppId: {} - Name: {}",
-        result.app_id, &result.name
+        result.app_id, result.name
     );
     Some(result.app_id as u32)
 }

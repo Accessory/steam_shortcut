@@ -19,6 +19,7 @@ pub struct ShortcutEntry {
     pub devkit_override_app_id: u32,
     pub last_play_time: u32,
     pub flatpak_app_id: String,
+    pub sort_as: String,
     #[allow(dead_code)]
     pub tags: Vec<String>,
 }
